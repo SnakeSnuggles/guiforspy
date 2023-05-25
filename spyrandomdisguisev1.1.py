@@ -5,17 +5,18 @@ from pynput.keyboard import Key, Controller, Listener
 import keyboard
 import time
 
-
+#removes '' if  there is something in the list
 def checkadd():
-
     if len(whattopick) == 2:
         for x in whattopick:
             if x == '':
                 whattopick.remove('')
+#appends '' if there is nothing in the list                
 def checkremove():
     if len(whattopick) == 1:
         whattopick.append('')
 
+#coolest function ever
 def classcaller(clas,str):
 
     if clas.get() == 1:
@@ -26,6 +27,7 @@ def classcaller(clas,str):
         checkremove()
         whattopick.remove(str)
 
+#The functions that get called when the checkmarks are pressed      
 def scout101():
     classcaller(scout,'1')        
 def soldier101():
@@ -47,9 +49,8 @@ def sniper101():
 def spy101():
     classcaller(spy,'9')
 
-
+#This is the part where the program picks from whattopick to press a random number
 def thepickingpart():    
-    
     thethingthatcandostufftrustmeIknowwhatiamdoing = Controller()
     print("We are ready to go!")
     while True:
@@ -61,7 +62,9 @@ def thepickingpart():
             thethingthatcandostufftrustmeIknowwhatiamdoing.press(whattopick[randomcrap])
             thethingthatcandostufftrustmeIknowwhatiamdoing.release(whattopick[randomcrap])
             time.sleep(0.01)
-
+            
+            
+#this is the window it creates the window
 def thewindow():
     global scout
     global soldier
@@ -78,7 +81,7 @@ def thewindow():
     p1 = PhotoImage(file = '350px-Spytaunt3.png')
     master.iconphoto(False, p1)
 
-
+    #The buttons that add the items to randomly pick from
     scout = IntVar()
     Checkbutton(master, text='scout', variable=scout, onvalue = 1, offvalue = 0,command=scout101).grid(row=0, sticky=W)
     soldier = IntVar()
@@ -101,7 +104,11 @@ def thewindow():
     Checkbutton(master, text='spy', variable=spy, onvalue = 1, offvalue = 0,command=spy101).grid(row=9, sticky=W)
     mainloop()
 
+    
+#The list that gets appened
 whattopick = ['']
+
+
 
 prossesofwindow = Thread(target=thewindow)
 prossesofpicking = Thread(target=thepickingpart)
