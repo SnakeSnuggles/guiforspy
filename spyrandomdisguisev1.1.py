@@ -5,6 +5,7 @@ from pynput.keyboard import Key, Controller, Listener
 import keyboard
 import time
 
+
 #removes '' if  there is something in the list
 def checkadd():
     if len(whattopick) == 2:
@@ -50,20 +51,23 @@ def spy101():
     classcaller(spy,'9')
 
 #This is the part where the program picks from whattopick to press a random number
-def thepickingpart():    
-    thethingthatcandostufftrustmeIknowwhatiamdoing = Controller()
-    print("We are ready to go!")
-    while True:
-        randomcrap = random.randint(0, len(whattopick)-1)
-        if keyboard.read_key() == '4':
-            time.sleep(0.46)
-            print(f'working {randomcrap}')
-            
-            thethingthatcandostufftrustmeIknowwhatiamdoing.press(whattopick[randomcrap])
-            thethingthatcandostufftrustmeIknowwhatiamdoing.release(whattopick[randomcrap])
-            time.sleep(0.01)
-            
-            
+def thepickingpart(): 
+    try:
+        thethingthatcandostufftrustmeIknowwhatiamdoing = Controller()
+        print("We are ready to go!")
+        while iswindowgood == True:
+            randomcrap = random.randint(0, len(whattopick)-1)
+            if keyboard.read_key() == '4':
+                time.sleep(0.46)
+                print(f'working {randomcrap}')
+
+                thethingthatcandostufftrustmeIknowwhatiamdoing.press(whattopick[randomcrap])
+                thethingthatcandostufftrustmeIknowwhatiamdoing.release(whattopick[randomcrap])
+                time.sleep(0.01)
+    except:
+        print('idiot')
+        thepickingpart()    
+   
 #this is the window it creates the window
 def thewindow():
     global scout
@@ -103,12 +107,12 @@ def thewindow():
     spy = IntVar()
     Checkbutton(master, text='spy', variable=spy, onvalue = 1, offvalue = 0,command=spy101).grid(row=9, sticky=W)
     mainloop()
-
+    
     
 #The list that gets appened
 whattopick = ['']
 
-
+iswindowgood = True
 
 prossesofwindow = Thread(target=thewindow)
 prossesofpicking = Thread(target=thepickingpart)
@@ -120,4 +124,3 @@ prossesofwindow.start()
 
 prossesofpicking.join()
 prossesofwindow.join()
-
