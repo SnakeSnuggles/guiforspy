@@ -59,7 +59,7 @@ def thepickingpart():
             randomcrap = random.randint(0, len(whattopick)-1)
             if keyboard.read_key() == '4':
                 time.sleep(0.46)
-                print(f'working {randomcrap}')
+                
 
                 thethingthatcandostufftrustmeIknowwhatiamdoing.press(whattopick[randomcrap])
                 thethingthatcandostufftrustmeIknowwhatiamdoing.release(whattopick[randomcrap])
