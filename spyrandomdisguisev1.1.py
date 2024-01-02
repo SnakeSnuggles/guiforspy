@@ -9,6 +9,9 @@ TODO:
 1) Make it dark mode
 2) Make the thing look better
 3) Add a place to change the keybind for the selection
+4) Make it so when the window is closed the console will also be closed
+5) Get rid of the console 
+6) Try to store the icon in the python source 
 '''
 def window_part():
     global to_pick_from
