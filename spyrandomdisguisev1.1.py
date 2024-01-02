@@ -4,6 +4,12 @@ import random
 import keyboard
 import time
 
+'''
+TODO:
+1) Make it dark mode
+2) Make the thing look better
+3) Add a place to change the keybind for the selection
+'''
 def window_part():
     global to_pick_from
     def class_caller(class_var,button:str):
