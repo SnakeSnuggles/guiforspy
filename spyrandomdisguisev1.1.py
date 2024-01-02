@@ -5,7 +5,7 @@ import keyboard
 import time
 
 def window_part():
-    global to_pick_from,window
+    global to_pick_from
     def class_caller(class_var,button:str):
         ischecker = class_var.get() == 1
         if ischecker:
