@@ -5,7 +5,7 @@ import keyboard
 import time
 
 def window_part():
-    global to_pick_from
+    global to_pick_from,window
     def class_caller(class_var,button:str):
         ischecker = class_var.get() == 1
         if ischecker:
@@ -14,7 +14,8 @@ def window_part():
             to_pick_from.remove(button)
     window = tk.Tk()
     window.title("Spy disguise")
-    window.geometry("400x300")
+    window.geometry("190x240")
+    window.resizable(False, False)
     p1 = tk.PhotoImage(file = '350px-Spytaunt3.png')
     window.iconphoto(False, p1)
     text = ["Scout" , "Soldier" , "Pyro" , "Demoman" , "Heavy" , "Engineer" , "Medic" , "Sniper" , "Spy"]
