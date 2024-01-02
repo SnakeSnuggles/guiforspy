@@ -13,6 +13,7 @@ TODO:
 5) Get rid of the console 
 6) Try to store the icon in the python source 
 '''
+COLOR1 = "#333940"
 def window_part():
     global to_pick_from
     def class_caller(class_var,button:str):
@@ -25,6 +26,7 @@ def window_part():
     window.title("Spy disguise")
     window.geometry("190x240")
     window.resizable(False, False)
+    window.config(bg=COLOR1)
     p1 = tk.PhotoImage(file = '350px-Spytaunt3.png')
     window.iconphoto(False, p1)
     text = ["Scout" , "Soldier" , "Pyro" , "Demoman" , "Heavy" , "Engineer" , "Medic" , "Sniper" , "Spy"]
@@ -33,7 +35,7 @@ def window_part():
     to_pick_from = []
     for x in range(len(text)):
         vars.append(tk.IntVar())
-        checkbox = tk.Checkbutton(window, text=text[x], variable=vars[x], command=lambda x=x+1: class_caller(vars[x-1], str(x))).grid(row=x, sticky=tk.W)
+        checkbox = tk.Checkbutton(window, text=text[x], variable=vars[x],bg=COLOR1,fg='white',command=lambda x=x+1: class_caller(vars[x-1], str(x))).grid(row=x, sticky=tk.W)
     window.mainloop()
 
 def picking_part():
