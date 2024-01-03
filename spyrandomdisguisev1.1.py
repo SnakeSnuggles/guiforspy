@@ -20,9 +20,6 @@ TODO:
 # COLOR2 = "#084A5A"
 COLOR1 = "#191919"
 COLOR2 = "#081E4C"
-
-
-
 def readr():
     try:
         with open("show.txt", "r") as file:
