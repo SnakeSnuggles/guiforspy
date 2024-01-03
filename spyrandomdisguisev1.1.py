@@ -15,8 +15,11 @@ TODO:
 7) Add a instruction menu with what this is used for and how to use it (D)
 8) Add the ability to change color 1 and color 2
 '''
-COLOR1 = "#350A0B"
-COLOR2 = "#540D0A"
+# COLOR1 = "#350A0B"
+# COLOR2 = "#540D0A"
+
+COLOR1 = "#0E1721"
+COLOR2 = "#084A5A"
 def readr():
     try:
         with open("show.txt", "r") as file:
