@@ -11,14 +11,18 @@ TODO:
 3) Add a place to change the keybind for the selection
 4) Make it so when the window is closed the console will also be closed
 5) Get rid of the console 
-6) Try to store the icon in the python source 
-7) Add a instruction menu with what this is used for and how to use it (D)
-8) Add the ability to change color 1 and color 2
+6) Add a instruction menu with what this is used for and how to use it (D)
+7) Add the ability to change color 1 and color 2
 '''
 # COLOR1 = "#350A0B"
 # COLOR2 = "#540D0A"
-COLOR1 = "#0E1721"
-COLOR2 = "#084A5A"
+# COLOR1 = "#0E1721"
+# COLOR2 = "#084A5A"
+COLOR1 = "#191919"
+COLOR2 = "#081E4C"
+
+
+
 def readr():
     try:
         with open("show.txt", "r") as file:
