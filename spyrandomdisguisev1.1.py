@@ -6,14 +6,16 @@ import time
 
 '''
 TODO:
-1) Make it dark mode
-2) Make the thing look better
+1) Make it dark mode (D)
+2) Make the thing look better (D)
 3) Add a place to change the keybind for the selection
 4) Make it so when the window is closed the console will also be closed
 5) Get rid of the console 
 6) Try to store the icon in the python source 
+7) Add a instruction menu with what this is used for and how to use it
 '''
-COLOR1 = "#333940"
+COLOR1 = "#350A0B"
+COLOR2 = "#540D0A"
 def window_part():
     global to_pick_from
     def class_caller(class_var,button:str):
@@ -35,7 +37,10 @@ def window_part():
     to_pick_from = []
     for x in range(len(text)):
         vars.append(tk.IntVar())
-        checkbox = tk.Checkbutton(window, text=text[x], variable=vars[x],bg=COLOR1,fg='white',command=lambda x=x+1: class_caller(vars[x-1], str(x))).grid(row=x, sticky=tk.W)
+        checkbox = tk.Checkbutton(window, text=text[x], variable=vars[x], bg=COLOR1, fg='white',
+                                   command=lambda x=x+1: class_caller(vars[x-1], str(x)))
+        checkbox.config(font=('Arial', 12), activebackground=COLOR1,activeforeground='white', selectcolor=COLOR2)
+        checkbox.grid(row=x, sticky=tk.W)
     window.mainloop()
 
 def picking_part():
