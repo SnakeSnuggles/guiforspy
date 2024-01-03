@@ -17,7 +17,6 @@ TODO:
 '''
 # COLOR1 = "#350A0B"
 # COLOR2 = "#540D0A"
-
 COLOR1 = "#0E1721"
 COLOR2 = "#084A5A"
 def readr():
